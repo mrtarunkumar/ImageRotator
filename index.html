@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image</title>
+</head>
+<script>
+    var i = 0; //start point
+    var images = []; //empty array to store our images
+    var time = 3000; //time in ms between each image switch
+    
+    //image list
+    images[0] = "forest1.jpg";
+    images[1] = "forest2.jpg";
+    images[2] = "forest3.jpg";
+    
+    //change image
+    function changeImg(){
+        document.slide.src = images[i];
+        
+        if(i < images.length - 1){
+            i++;
+        }else{
+            i = 0;
+        }
+        
+        setTimeout("changeImg()", time);
+    };
+    
+    window.onload = changeImg;
+</script>
+<body>
+    <img name="slide" width="400" height="200" />
+</body>
+</html>
